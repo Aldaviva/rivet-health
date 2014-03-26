@@ -1,6 +1,4 @@
-sieve
+rivet-health
 =====
 
-Dashboard that visually groups release tasks into boulders, rocks, and pebbles.
-
-![Sieve](http://aldaviva.com/portfolio/artwork/sieve.png)
+Point-in-time summary analytics dashboard for a Python + JavaScript web application.
