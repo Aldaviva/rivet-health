@@ -1,0 +1,20 @@
+{
+	"httpServer": {
+		"port": 8080
+	},
+	"remote": {
+		"mixpanel": {
+			"apiKey": "",
+			"apiSecret": "",
+			"baseUrl": "http://mixpanel.com/api/2.0/"
+		},
+		"newrelic": {
+			"apiKey": "",
+			"applicationId": -1,
+			"baseUrl": "https://api.newrelic.com/v2/"
+		}
+	},
+	"cache": {
+		"ttl": 240000
+	}
+}
