@@ -12,9 +12,15 @@
 			"apiKey": "",
 			"applicationId": -1,
 			"baseUrl": "https://api.newrelic.com/v2/"
+		},
+		"googleanalytics": {
+			"clientId": "",
+			"clientSecret": "",
+			"refreshToken": "",
+			"viewId": ""
 		}
 	},
 	"cache": {
-		"ttl": 240000
+		"ttl": 15000
 	}
 }

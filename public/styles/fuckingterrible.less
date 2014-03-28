@@ -1,0 +1,44 @@
+body {
+	font: 53px "Times New Roman", "Times", "serif";
+	color: black;
+	margin: 30px;
+	background: white;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+items {
+	margin: 1em;
+	display: block;
+
+	item {
+		display: block;
+		padding: 0.4em 0;
+		border-top: 1px solid rgba(0,0,0,20%);
+
+		&:first-child {
+			border-top: none;
+		}
+
+		name, value {
+			vertical-align: top;
+		}
+
+		name {
+		}
+
+		value {
+			text-align: right;
+			color: blue;
+			float: right;
+		}
+	}
+}
+
+.construction {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
