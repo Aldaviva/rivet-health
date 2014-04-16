@@ -10,53 +10,93 @@
 
 	<body>
 		<div class="rivet-health">
-			<h1>Rivet Prod Health</h1>
+			<header>
+				<h1>Rivet Prod Health</h1>
+			</header>
 
-			<items>
-				<item class="responseTime">
-					<name>Response time</name>
-					<value></value>
-				</item>
-				<item class="throughput">
-					<name>Throughput</name>
-					<value></value>
-				</item>
-				<item class="error500">
-					<name>500s</name>
-					<value>?</value>
-				</item>
-				<item class="errorJS">
-					<name>JS errors</name>
-					<value>?</value>
-				</item>
-				<item class="skinnyLoggedIn">
-					<name>Logged-in users of Skinny</name>
-					<value></value>
-				</item>
-				<item class="skinnyModerators">
-					<name>Moderator users of Skinny</name>
-					<value></value>
-				</item>
-				<item class="skinnyBrowser">
-					<name>Skinny Browser</name>
-					<value></value>
-				</item>
-				<item class="skinnyOS">
-					<name>Skinny OS</name>
-					<value></value>
-				</item>
-			</items>
+			<div class="columns">
+				<div class="column">
+					<div>
+						<div class="metric appResponseTime">
+							<h2>App response time</h2>
+							<div class="value numeric"></div>
+							<div class="delta down downIsBetter">1%</div>
+							<div class="units">milliseconds</div>
+						</div>
+
+						<div class="metric throughput">
+							<h2>App throughput</h2>
+							<div class="value numeric"></div>
+							<div class="delta down upIsBetter">1%</div>
+							<div class="units">requests/minute</div>
+						</div>
+
+						<div class="metric errorRate">
+							<h2>Error rate</h2>
+							<div class="value numeric"></div>
+							<div class="delta up downIsBetter">1%</div>
+						</div>
+
+						<div class="metric apdex">
+							<h2>Apdex</h2>
+							<div class="value numeric"></div>
+							<div class="delta up upIsBetter">1%</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="column">
+					<div>
+						<div class="metric enterButtonClicked">
+							<h2>Enter meeting button</h2>
+							<div class="value numeric"></div>
+							<div class="units">clicks</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="column">
+					<div>
+						<div class="common500s">
+							<h2>Common 500s</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="column">
+					<div>
+						<div class="metric browserShare">
+							<h2>Browsers</h2>
+							<div class="value barGraph"></div>
+						</div>
+
+						<div class="metric osShare">
+							<h2>Operating systems</h2>
+							<div class="value barGraph"></div>
+						</div>
+
+						<div class="metric moderatorShare">
+							<h2>Moderators</h2>
+							<div class="value barGraph"></div>
+						</div>
+
+						<div class="metric loggedInShare">
+							<h2>Logged-in</h2>
+							<div class="value barGraph"></div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-
-		<img src="images/construction.gif" class="construction" />
 
 		<script src="scripts/lib/jquery.js" type="text/javascript"></script>
 		<script src="scripts/lib/lodash.js" type="text/javascript"></script>
 		<script src="scripts/lib/backbone.js" type="text/javascript"></script>
 		<script src="scripts/lib/moment.js" type="text/javascript"></script>
-		<script src="scripts/justtheworst.js" type="text/javascript"></script>
+		<script src="scripts/main.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			updateAndRender();
+			setInterval(updateAndRender, 15*1000);
 		</script>
 	</body>
 </html>

@@ -1,0 +1,65 @@
+body {
+	background-color: hsl(0, 0%, 92%);
+	color: black;
+}
+
+a {
+
+}
+
+header {
+	margin     : 0 auto;
+	text-align : center;
+
+	h1 {
+		font        : bold italic 51px "Hurme Geometric Sans";
+		line-height : @page_header_height;
+		opacity     : 0.33;
+		text-transform: uppercase;
+	}
+}
+
+.columns {
+	bottom   : @page_grid_spacing;
+	left     : @page_grid_spacing/2;
+	position : absolute;
+	right    : @page_grid_spacing/2;
+	top      : @page_header_height;
+}
+
+.column {
+	@width: 100% / @page_column_count;
+
+	bottom   : 0;
+	position : absolute;
+	top      : 0;
+	width    : @width;
+
+	.column_widths(@num_cols) when (@num_cols > 0) {
+		&:nth-child(@{num_cols}){
+			left: @width * (@num_cols - 1);
+		}
+		.column_widths(@num_cols - 1);
+	}
+
+	.column_widths(@page_column_count);
+
+	> div {
+		background : white;
+		bottom     : 0;
+		left       : @page_grid_spacing/2;
+		padding    : 34px;
+		position   : absolute;
+		right      : @page_grid_spacing/2;
+		top        : 0;
+	}
+
+	h2 {
+		font: 33px "Akzidenz-Grotesk Light Extended";
+		opacity: 0.6;
+	}
+
+	&:nth-child(1), &:nth-child(2){
+		text-align: right;
+	}
+}

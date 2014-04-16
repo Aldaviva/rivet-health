@@ -1,0 +1,100 @@
+.metric {
+	margin-top: 70px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	.units {
+		font       : italic 20px/19px "Akzidenz-Grotesk Light";
+		margin-top : 28px;
+		opacity    : 0.40;
+	}
+
+	.delta {
+		float      : left;
+		font       : 28px/23px "Hurme Geometric Sans";
+		margin-top : -20px;
+		background-repeat: no-repeat;
+		text-indent: 44px;
+
+		&.down.downIsBetter {
+			background-image: url('../images/delta_down_green.png');
+		}
+
+		&.down.upIsBetter {
+			background-image: url('../images/delta_down_red.png');
+		}
+
+		&.up.downIsBetter {
+			background-image: url('../images/delta_up_red.png');
+		}
+
+		&.up.upIsBetter {
+			background-image: url('../images/delta_up_green.png');
+		}
+	}
+
+	.value {
+		&.numeric {
+			font       : bold 117px/81px "Hurme Geometric Sans";
+			margin-top : 24px;
+
+			&.yellow {
+				color: @orange;
+			}
+
+			&.red {
+				color: @red;
+			}
+		}
+
+		&.barGraph {
+			margin : 20px -2px 0;
+
+			.graphColors(){
+				&:nth-child(1){
+					background-color: @graph_green;
+				}
+				&:nth-child(2){
+					background-color: @graph_blue;
+				}
+				&:nth-child(3){
+					background-color: @graph_orange;
+				}
+				&:nth-child(4){
+					background-color: @graph_pink;
+				}
+			}
+
+			> div {
+				.graphColors();
+
+				border-color : white;
+				border-style : none solid;
+				border-width : 2px;
+				box-sizing   : border-box;
+				display      : inline-block;
+				height       : 83px;
+			}
+
+			legend {
+				padding: 3px 14px 15px;
+
+				div {
+					.graphColors();
+
+					color        : rgb(102, 102, 102);
+					float        : left;
+					font         : 18px/18px "Akzidenz-Grotesk Light";
+					height       : 15px;
+					margin-right : 113px;
+					margin-top   : 12px;
+					text-indent  : 23px;
+					white-space  : nowrap;
+					width        : 15px;
+				}
+			}
+		}
+	}
+}
